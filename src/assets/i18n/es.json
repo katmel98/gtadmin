@@ -1,0 +1,19 @@
+{
+    "admin_console_title": "Consola de Administración",
+    "admin_console_footer_title": "Consola de Administración por ",
+    "header_menu_dashboard": "Consola",
+    "header_menu_users": "Usuarios",
+    "header_menu_auths": "Autorizaciones",
+    "header_menu_messages": "Mensajes",
+    "header_menu_logs": "Logs",
+    "profile_menu_profile": "Perfil",
+    "profile_menu_logout": "Salir",
+    "sidebar_menu_title": "MENÚ PRINCIPAL",
+    "main_menu_dashboard": "Consola",
+    "main_menu_access": "Acceso",
+    "main_menu_access_users": "Usuarios",
+    "main_menu_access_auths": "Autorizaciones",
+    "main_menu_records": "Registros",
+    "main_menu_records_messages": "Mensajes",
+    "main_menu_records_logs": "Logs"
+}

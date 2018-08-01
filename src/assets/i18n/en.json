@@ -1,0 +1,19 @@
+{
+    "admin_console_title": "Admin Console",
+    "admin_console_footer_title": "Admin Console by ",
+    "header_menu_dashboard": "Dashboard",
+    "header_menu_users": "Users",
+    "header_menu_auths": "Auths",
+    "header_menu_messages": "Messages",
+    "header_menu_logs": "Logs",
+    "profile_menu_profile": "Profile",
+    "profile_menu_logout": "Sign Out",
+    "sidebar_menu_title": "MAIN NAVIGATION",
+    "main_menu_dashboard": "Dashboard",
+    "main_menu_access": "Access",
+    "main_menu_access_users": "Users",
+    "main_menu_access_auths": "Auths",
+    "main_menu_records": "Records",
+    "main_menu_records_messages": "Messages",
+    "main_menu_records_logs": "Logs"
+}
