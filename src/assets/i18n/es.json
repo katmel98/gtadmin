@@ -1,4 +1,5 @@
 {
+    "wait_message": "Por favor espere, estamos cargando la página ...",
     "admin_console_title": "Consola de Administración",
     "admin_console_footer_title": "Consola de Administración por ",
     "header_menu_dashboard": "Consola",

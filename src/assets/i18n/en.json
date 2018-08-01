@@ -1,4 +1,5 @@
 {
+    "wait_message": "Please wait we are loading the page ...",
     "admin_console_title": "Admin Console",
     "admin_console_footer_title": "Admin Console by ",
     "header_menu_dashboard": "Dashboard",
