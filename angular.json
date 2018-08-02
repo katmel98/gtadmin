@@ -23,9 +23,22 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/plugins/bootstrap/css/bootstrap.min.css",
+              "src/assets/plugins/jvectormap/jquery-jvectormap-2.0.3.css",
+              "src/assets/plugins/morrisjs/morris.css",
+              "src/assets/css/main.css",
+              "src/assets/css/color_skins.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/bundles/jvectormap.bundle.js",
+              "src/assets/bundles/morrisscripts.bundle.js",
+              "src/assets/bundles/sparkline.bundle.js",
+              "src/assets/bundles/knob.bundle.js",
+              "src/assets/bundles/mainscripts.bundle.js",
+              "src/assets/js/pages/index.js",
+              "src/assets/js/pages/charts/jquery-knob.min.js"
+            ]
           },
           "configurations": {
             "production": {

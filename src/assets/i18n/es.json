@@ -13,8 +13,16 @@
     "main_menu_dashboard": "Consola",
     "main_menu_access": "Acceso",
     "main_menu_access_users": "Usuarios",
-    "main_menu_access_auths": "Autorizaciones",
+    "main_menu_access_permissions": "Permisos",
+    "main_menu_access_roles": "Roles",
     "main_menu_records": "Registros",
     "main_menu_records_messages": "Mensajes",
-    "main_menu_records_logs": "Logs"
+    "main_menu_records_syslogs": "Logs",
+    "dashboard_title": "Consola",
+    "dashboard_title_descrip": "Bienvenidos a la Aplicación de Administración",
+    "breadcrumb_home": "Consola de Administración",
+    "breadcrumb_dashboard": "Consola",
+    "breadcrumb_users": "Usuarios",
+    "users_title": "Usuarios",
+    "users_title_descrip": "Lista de Usuarios Registrados"
 }

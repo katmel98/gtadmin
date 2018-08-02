@@ -17,11 +17,12 @@ import { ChatComponent } from './_common/templates/chat/chat.component';
 import { SearchComponent } from './_common/templates/search/search.component';
 
 import { UsersComponent } from './users/users.component';
-import { AuthsComponent } from './auths/auths.component';
 import { MessagesComponent } from './messages/messages.component';
-import { SystemLogsComponent } from './system-logs/system-logs.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserComponent } from './_common/templates/user/user.component';
+import { RolesComponent } from './roles/roles.component';
+import { PermissionsComponent } from './permissions/permissions.component';
+import { SyslogsComponent } from './syslogs/syslogs.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -41,7 +42,6 @@ export function initializeApp(appConfig: AppConfigService) {
     AppComponent,
     WaitComponent,
     UsersComponent,
-    AuthsComponent,
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
@@ -49,9 +49,11 @@ export function initializeApp(appConfig: AppConfigService) {
     ChatComponent,
     SearchComponent,
     MessagesComponent,
-    SystemLogsComponent,
     DashboardComponent,
-    UserComponent
+    UserComponent,
+    RolesComponent,
+    PermissionsComponent,
+    SyslogsComponent
   ],
   imports: [
     BrowserModule,

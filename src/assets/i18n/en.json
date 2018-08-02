@@ -14,7 +14,16 @@
     "main_menu_access": "Access",
     "main_menu_access_users": "Users",
     "main_menu_access_auths": "Auths",
+    "main_menu_access_permissions": "Permissions",
+    "main_menu_access_roles": "Roles",
     "main_menu_records": "Records",
     "main_menu_records_messages": "Messages",
-    "main_menu_records_logs": "Logs"
+    "main_menu_records_syslogs": "Logs",
+    "dashboard_title": "Dashboard",
+    "dashboard_title_decrip": "Welcome to Admin Console Application",
+    "breadcrumb_home": "Admin Console",
+    "breadcrumb_dashboard": "Dashboard",
+    "breadcrumb_users": "Users",
+    "users_title": "Users",
+    "users_title_descrip": "Registered Users List"
 }
