@@ -21,6 +21,7 @@ import { AuthsComponent } from './auths/auths.component';
 import { MessagesComponent } from './messages/messages.component';
 import { SystemLogsComponent } from './system-logs/system-logs.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { UserComponent } from './_common/templates/user/user.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -49,7 +50,8 @@ export function initializeApp(appConfig: AppConfigService) {
     SearchComponent,
     MessagesComponent,
     SystemLogsComponent,
-    DashboardComponent
+    DashboardComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
