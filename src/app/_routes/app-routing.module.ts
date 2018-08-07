@@ -7,6 +7,7 @@ import { MessagesComponent } from '../messages/messages.component';
 import { PermissionsComponent } from '../permissions/permissions.component';
 import { RolesComponent } from '../roles/roles.component';
 import { SyslogsComponent } from '../syslogs/syslogs.component';
+import { TranslationsComponent } from '../translations/translations.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: 'permissions', component: PermissionsComponent },
   { path: 'roles', component: RolesComponent },
   { path: 'messages', component: MessagesComponent },
-  { path: 'syslogs', component: SyslogsComponent }
+  { path: 'syslogs', component: SyslogsComponent },
+  { path: 'translations', component: TranslationsComponent },
 ];
 
 @NgModule({

@@ -23,6 +23,7 @@ import { UserComponent } from './_common/templates/user/user.component';
 import { RolesComponent } from './roles/roles.component';
 import { PermissionsComponent } from './permissions/permissions.component';
 import { SyslogsComponent } from './syslogs/syslogs.component';
+import { TranslationsComponent } from './translations/translations.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -53,7 +54,8 @@ export function initializeApp(appConfig: AppConfigService) {
     UserComponent,
     RolesComponent,
     PermissionsComponent,
-    SyslogsComponent
+    SyslogsComponent,
+    TranslationsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,6 @@
 {
+    "devel_status_in_progress": "En Progreso",
+    "devel_status_soon": "Proximamente",    
     "wait_message": "Por favor espere, estamos cargando la página ...",
     "admin_console_title": "Consola de Administración",
     "admin_console_footer_title": "Consola de Administración por ",
@@ -18,6 +20,8 @@
     "main_menu_records": "Registros",
     "main_menu_records_messages": "Mensajes",
     "main_menu_records_syslogs": "Logs",
+    "main_menu_utils": "Utilidades",
+    "main_menu_utils_translations": "Traducciones",
     "dashboard_title": "Consola",
     "dashboard_title_descrip": "Bienvenidos a la Aplicación de Administración",
     "breadcrumb_home": "Consola de Administración",

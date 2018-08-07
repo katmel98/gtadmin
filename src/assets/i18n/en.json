@@ -1,4 +1,6 @@
 {
+    "devel_status_in_progress": "In Progress",
+    "devel_status_soon": "Soon",    
     "wait_message": "Please wait we are loading the page ...",
     "admin_console_title": "Admin Console",
     "admin_console_footer_title": "Admin Console by ",
@@ -19,6 +21,8 @@
     "main_menu_records": "Records",
     "main_menu_records_messages": "Messages",
     "main_menu_records_syslogs": "Logs",
+    "main_menu_utils": "Utils",
+    "main_menu_utils_translations": "Translations",
     "dashboard_title": "Dashboard",
     "dashboard_title_decrip": "Welcome to Admin Console Application",
     "breadcrumb_home": "Admin Console",

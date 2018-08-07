@@ -13,17 +13,23 @@
           <li> <a href="/"><i class="zmdi zmdi-view-dashboard"></i><span>{{ 'main_menu_dashboard' | translate }}</span> </a> </li>
           <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-shield-check"></i><span>{{ 'main_menu_access' | translate }}</span> </a>
               <ul class="ml-menu">
-                  <li> <a routerLink="/users">{{ 'main_menu_access_users' | translate }}</a></li>
-                  <li> <a routerLink="/permissions">{{ 'main_menu_access_permissions' | translate }}</a></li>
-                  <li> <a routerLink="/roles">{{ 'main_menu_access_roles' | translate }}</a></li>
+                  <li> <a routerLink="/users">{{ 'main_menu_access_users' | translate }} <span class="badge badge-warning bg-blue hidden-sm-down">{{ 'devel_status_in_progress' | translate }}</span></a></li>
+                  <li> <a routerLink="/permissions">{{ 'main_menu_access_permissions' | translate }} <span class="badge badge-warning bg-red hidden-sm-down">{{ 'devel_status_soon' | translate }}</span></a></li>
+                  <li> <a routerLink="/roles">{{ 'main_menu_access_roles' | translate }} <span class="badge badge-warning bg-red hidden-sm-down">{{ 'devel_status_soon' | translate }}</span></a></li>
                 </ul>
           </li>
           <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-info"></i><span>{{ 'main_menu_records' | translate }}</span> </a>
               <ul class="ml-menu">
-                  <li> <a routerLink="/messages">{{ 'main_menu_records_messages' | translate }}</a> </li>
-                  <li> <a routerLink="/syslogs">{{ 'main_menu_records_syslogs' | translate }}</a></li>
+                  <li> <a routerLink="/messages">{{ 'main_menu_records_messages' | translate }} <span class="badge badge-warning bg-red hidden-sm-down">{{ 'devel_status_soon' | translate }}</span></a> </li>
+                  <li> <a routerLink="/syslogs">{{ 'main_menu_records_syslogs' | translate }} <span class="badge badge-warning bg-red hidden-sm-down">{{ 'devel_status_soon' | translate }}</span></a></li>
               </ul>
           </li>
+          <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-wrench"></i><span>{{ 'main_menu_utils' | translate }}</span> </a>
+            <ul class="ml-menu">
+                <li> <a routerLink="/translations">{{ 'main_menu_utils_translations' | translate }} <span class="badge badge-warning bg-red hidden-sm-down">{{ 'devel_status_soon' | translate }}</span></a> </li>
+            </ul>
+        </li>
+
       </ul>
   </div>
   <!-- #Menu --> 
