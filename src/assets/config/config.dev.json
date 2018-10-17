@@ -16,7 +16,22 @@
     },
     "apiServer": {
         "metadata": "https://metadata.demo.com/api/v1.0/",
-        "rules": "https://rules.demo.com/api/v1.0/"
+        "rules": "https://rules.demo.com/api/v1.0/",
+        "authAPI": "http://localhost:3000"
     },
+    "redirectionApp": {
+        "admin": "http://localhost:4300",
+        "login": "http://localhost:4200"
+    },
+    "errors": {
+        "toast_timer": 5400
+    },
+    "authentication": {
+        "rsa": {
+            "privateKey": "9d958b7eff6a4490b05e48316e6305b5",
+            "publicKey": "7c4e85a4b6de4d1abca9540f3b636cd5",
+            "enabled": true
+        }
+    },    
     "debug": true
 }

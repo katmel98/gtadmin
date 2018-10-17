@@ -15,6 +15,7 @@
     "main_menu_dashboard": "Dashboard",
     "main_menu_access": "Access",
     "main_menu_access_users": "Users",
+    "main_menu_access_groups": "Groups",
     "main_menu_access_auths": "Auths",
     "main_menu_access_permissions": "Permissions",
     "main_menu_access_roles": "Roles",

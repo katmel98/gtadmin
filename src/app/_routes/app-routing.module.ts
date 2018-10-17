@@ -8,10 +8,12 @@ import { PermissionsComponent } from '../permissions/permissions.component';
 import { RolesComponent } from '../roles/roles.component';
 import { SyslogsComponent } from '../syslogs/syslogs.component';
 import { TranslationsComponent } from '../translations/translations.component';
+import { GroupsComponent } from '../groups/groups.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
   { path: 'users', component: UsersComponent },
+  { path: 'groups', component: GroupsComponent },
   { path: 'permissions', component: PermissionsComponent },
   { path: 'roles', component: RolesComponent },
   { path: 'messages', component: MessagesComponent },
