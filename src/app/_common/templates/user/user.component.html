@@ -7,7 +7,9 @@
       <img src="assets/images/xs/avatar1.jpg" width="48" height="48" alt="User" />
   </div>
   <div class="info-container">
-      <div class="name" data-toggle="dropdown">John Doe</div>
+      <div class="name" data-toggle="dropdown" tooltip="{{user.name}}" placement="right" show-delay="500">
+        {{ user.name | truncate:15}}
+      </div>
       <div class="btn-group user-helper-dropdown">
           <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" role="button"> keyboard_arrow_down </i>
           <ul class="dropdown-menu slideUp">
@@ -20,6 +22,6 @@
               <li><a (click)='logout()'><i class="material-icons">input</i>{{ 'profile_menu_logout' | translate }}</a></li>
           </ul>
       </div>
-      <div class="email">john.doe@example.com</div>
+      <div class="email" tooltip="{{user.email}}" placement="right" show-delay="500">{{ user.email | truncate:18}}</div>
   </div>
 </div>

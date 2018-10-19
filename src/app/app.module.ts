@@ -25,6 +25,9 @@ import { PermissionsComponent } from './permissions/permissions.component';
 import { SyslogsComponent } from './syslogs/syslogs.component';
 import { TranslationsComponent } from './translations/translations.component';
 import { GroupsComponent } from './groups/groups.component';
+import { TruncateModule } from 'ng2-truncate';
+import { TooltipModule } from 'ng2-tooltip-directive';
+
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -57,9 +60,11 @@ export function initializeApp(appConfig: AppConfigService) {
     PermissionsComponent,
     SyslogsComponent,
     TranslationsComponent,
-    GroupsComponent
+    GroupsComponent,
   ],
   imports: [
+    TruncateModule,
+    TooltipModule,
     BrowserModule,
     HttpClientModule,
     TranslateModule.forRoot({

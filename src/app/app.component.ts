@@ -2,8 +2,7 @@ import { AuthService } from './_services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { Title } from '@angular/platform-browser';
-import { ActivatedRoute, Params } from '@angular/router';
-import { map } from 'rxjs/operators';
+import { ActivatedRoute } from '@angular/router';
 
 import * as CryptoJS from 'crypto-js';
 import { AppConfigService } from './_services/app-config.service';
@@ -52,8 +51,7 @@ export class AppComponent implements OnInit {
             if ( data ) {
               console.log(data);
             } else {
-              localStorage.removeItem('currentUser');
-              window.location.href = `${this.config.redirectionApp.login}`;
+              this.authService.logout();
             }
           });
           // return plain;
