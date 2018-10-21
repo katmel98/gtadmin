@@ -1,7 +1,7 @@
 import { AppConfigService } from './_services/app-config.service';
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { LOCALE_ID, NgModule, APP_INITIALIZER } from '@angular/core';
-import {HttpClientModule, HttpClient} from '@angular/common/http';
+import {HttpClientModule, HttpClient, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
@@ -27,6 +27,8 @@ import { TranslationsComponent } from './translations/translations.component';
 import { GroupsComponent } from './groups/groups.component';
 import { TruncateModule } from 'ng2-truncate';
 import { TooltipModule } from 'ng2-tooltip-directive';
+import { TokenInterceptor } from './_interceptors/token.interceptor';
+import { ErrorInterceptor } from './_interceptors/error.interceptor';
 
 
 // AoT requires an exported function for factories
@@ -77,14 +79,9 @@ export function initializeApp(appConfig: AppConfigService) {
     AppRoutingModule
   ],
   providers: [
-    AppConfigService,
-    {
-      provide: APP_INITIALIZER,
-      useFactory: initializeApp,
-      deps: [AppConfigService], multi:  true
-    },
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
     {provide: LOCALE_ID, useValue: 'ES'},
-    Title
+    Title,
   ],
   bootstrap: [AppComponent]
 })

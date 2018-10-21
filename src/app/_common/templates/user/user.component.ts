@@ -17,10 +17,7 @@ export class UserComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    const User = this.authService.getCurrentUser();
-    this.user.name = _.trim(User.name) + ' ' + _.trim(User.lastname) + ' ' + _.trim(User.surname);
-    this.user.email = User.email;
-    console.log(this.user);
+    this.user = this.authService.getCurrentUser();
   }
 
   logout() {

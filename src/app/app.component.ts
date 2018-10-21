@@ -42,19 +42,24 @@ export class AppComponent implements OnInit {
           this.id = params.auth;
           const reb64 = CryptoJS.enc.Hex.parse(this.id);
           const bytes = reb64.toString(CryptoJS.enc.Base64);
-          const decrypt  = CryptoJS.AES.decrypt(bytes, this.config.authentication.rsa.privateKey);
+          const decrypt  = CryptoJS.AES.decrypt(bytes, '9d958b7eff6a4490b05e48316e6305b5');
           const plain = decrypt.toString(CryptoJS.enc.Utf8);
           const user = JSON.parse(plain);
 
           return this.authService.getCredentials(user.email)
           .subscribe(data => {
             if ( data ) {
-              console.log(data);
+              console.log('*** Calling Set CurrentUser ***');
+              this.authService.setCurrentUser();
+              console.log('*** Initializing permissions ***');
+              this.authService.initializePermissions();
             } else {
               this.authService.logout();
             }
           });
           // return plain;
+        } else {
+          // this.authService.logout();
         }
 
       });

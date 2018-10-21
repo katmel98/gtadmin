@@ -16,12 +16,14 @@ export class AuthService {
 
   private config;
   private baseUrl;
+  private user = {name: '', email: ''};
 
   constructor(
         private http: HttpClient,
   ) {
         this.config = AppConfigService.settings;
-        this.baseUrl = this.config.apiServer.authAPI;
+        // this.baseUrl = this.config.apiServer.authAPI;
+        this.baseUrl = 'http://localhost:3000';
   }
 
     getCredentials(email: string): Observable<any> {
@@ -51,13 +53,21 @@ export class AuthService {
     logout() {
         // remove user from local storage to log user out
         localStorage.removeItem('currentUser');
-        console.log("LLAMADA DESDE LOGOUT");
         window.location.href = `${this.config.redirectionApp.login}`;
     }
 
+    setCurrentUser() {
+        const User = JSON.parse(localStorage.getItem('currentUser'));
+        this.user.name = _.trim(User.name) + ' ' + _.trim(User.lastname) + ' ' + _.trim(User.surname);
+        this.user.email = User.email;
+    }
+
     getCurrentUser() {
-        const user = JSON.parse(localStorage.getItem('currentUser'));
-        return user;
+        return this.user;
+    }
+
+    getToken() {
+        return JSON.parse(localStorage.getItem('currentUser')).access_token;
     }
 
     public isLoggedIn() {
@@ -74,5 +84,30 @@ export class AuthService {
         return moment(expiresAt);
     }
 
+    initializePermissions() {
+        const user = JSON.parse(localStorage.getItem('currentUser'));
+        const _id = user['_id'];
+        return this.http.get<any>(`${this.baseUrl}/users/permissions/${_id}` )
+        .subscribe((permissions: Array<any>) => {
+
+            console.log('*** PERMISSIONS ***');
+            console.log(permissions);
+
+            // const User = _.pick(user, ['name', 'access_token', 'logged_in']);
+            // if (user && User.access_token && User.logged_in) {
+            //     this.setSession(user);
+            //     return user;
+            // } else {
+            //     return null;
+            // }
+
+        },
+        error => {
+            console.log(error);
+            // return Observable.throwError(error);
+            return _.map(error);
+        });
+
+    }
 
 }

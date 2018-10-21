@@ -12,7 +12,7 @@ export class AppConfigService {
     constructor(private http: HttpClient) {}
 
     load() {
-        const jsonFile = `../../assets/config/config.${environment.name}.json`;
+        const jsonFile = `/assets/config/config.${environment.name}.json`;
         return new Promise<void>((resolve, reject) => {
             this.http.get(jsonFile).toPromise().then((response: Response) => {
                AppConfigService.settings = <IAppConfig>response;
