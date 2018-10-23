@@ -79,7 +79,15 @@ export function initializeApp(appConfig: AppConfigService) {
     AppRoutingModule
   ],
   providers: [
+    AppConfigService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializeApp,
+      deps: [AppConfigService],
+      multi:  true
+    },
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     {provide: LOCALE_ID, useValue: 'ES'},
     Title,
   ],

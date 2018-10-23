@@ -22,8 +22,8 @@ export class AuthService {
         private http: HttpClient,
   ) {
         this.config = AppConfigService.settings;
-        // this.baseUrl = this.config.apiServer.authAPI;
-        this.baseUrl = 'http://localhost:3000';
+        this.baseUrl = this.config.apiServer.authAPI;
+        // this.baseUrl = 'http://localhost:3000';
   }
 
     getCredentials(email: string): Observable<any> {

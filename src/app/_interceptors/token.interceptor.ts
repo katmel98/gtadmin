@@ -28,7 +28,7 @@ export class TokenInterceptor implements HttpInterceptor {
     // }
 
     const token = this.auth.getToken();
-    let changedRequest = request;
+    let changedRequest;
     // HttpHeader object immutable - copy values
     const headerSettings: {[name: string]: string | string[]; } = {};
 
@@ -38,13 +38,16 @@ export class TokenInterceptor implements HttpInterceptor {
     if (token) {
       headerSettings['Authorization'] = 'bearer ' + token;
     }
+    if (request.url.indexOf('config') > -1) {
+      console.log(true);
+      headerSettings['Content-Type'] = 'application/json';
+    }
+
     headerSettings['Content-Type'] = 'application/json';
     const newHeader = new HttpHeaders(headerSettings);
 
     changedRequest = request.clone({
       headers: newHeader});
-
-      console.log(changedRequest);
 
     return next.handle(changedRequest);
 
