@@ -27,7 +27,9 @@ export class TokenInterceptor implements HttpInterceptor {
     //   });
     // }
 
+    console.log('Revisando la existencia del token');
     const token = this.auth.getToken();
+    console.log(token);
     let changedRequest;
     // HttpHeader object immutable - copy values
     const headerSettings: {[name: string]: string | string[]; } = {};

@@ -27,8 +27,14 @@ export class AuthService {
   }
 
     getCredentials(email: string): Observable<any> {
-        return this.http.post<any>(`${this.baseUrl}/auth/userData`, {email} )
+        console.log("Intentando Obtener las Credenciales ...");
+        console.log(email);
+        const url = `${this.baseUrl}/auth/userData`;
+        console.log(url);
+        return this.http.post<any>(url, {email} )
         .pipe(map((user: Array<any>) => {
+            console.log("usuario desde el getcredentials")
+            console.log(user);
             const User = _.pick(user, ['name', 'access_token', 'logged_in']);
             if (user && User.access_token && User.logged_in) {
                 this.setSession(user);
@@ -38,7 +44,8 @@ export class AuthService {
             }
         }))
         .catch((error: any) => {
-            console.log(error);
+            console.log("ERROR OBTAINED");
+            // console.log(_.map(error));
             // return Observable.throwError(error);
             return _.map(error);
         });
@@ -47,6 +54,7 @@ export class AuthService {
     private setSession(authResult) {
         const expiresAt = moment().add(authResult.expiresIn, 'second');
         authResult.expiresAt = expiresAt;
+        console.log(authResult);
         localStorage.setItem('currentUser', JSON.stringify(authResult));
     }
 
@@ -67,7 +75,9 @@ export class AuthService {
     }
 
     getToken() {
-        return JSON.parse(localStorage.getItem('currentUser')).access_token;
+        if (localStorage.getItem('currentUser') !== null){
+            return JSON.parse(localStorage.getItem('currentUser')).access_token;
+        }
     }
 
     public isLoggedIn() {

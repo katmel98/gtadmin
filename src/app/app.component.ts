@@ -46,6 +46,8 @@ export class AppComponent implements OnInit {
           const plain = decrypt.toString(CryptoJS.enc.Utf8);
           const user = JSON.parse(plain);
 
+          console.log('Enviando el dato de usuario para obtener las credenciales');
+
           return this.authService.getCredentials(user.email)
           .subscribe(data => {
             if ( data ) {
