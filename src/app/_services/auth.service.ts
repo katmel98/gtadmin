@@ -7,35 +7,43 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 
 import * as moment from 'moment';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  private config;
-  private baseUrl;
-  private user = {name: '', email: ''};
+    private config;
+    private baseUrl;
+    private userSource = new BehaviorSubject({name: '', fullname: '', email: ''});
+    user = this.userSource.asObservable();
 
-  constructor(
-        private http: HttpClient,
-  ) {
-        this.config = AppConfigService.settings;
-        this.baseUrl = this.config.apiServer.authAPI;
-        // this.baseUrl = 'http://localhost:3000';
-  }
+    constructor(
+            private http: HttpClient,
+    ) {
+            this.config = AppConfigService.settings;
+            this.baseUrl = this.config.apiServer.authAPI;
+            // this.baseUrl = 'http://localhost:3000';
+    }
+
+    changeUser(user: any) {
+        console.log(user);
+        this.userSource.next(user);
+    }
 
     getCredentials(email: string): Observable<any> {
-        console.log("Intentando Obtener las Credenciales ...");
-        console.log(email);
+        console.log('Intentando Obtener las Credenciales ...');
+        // console.log(email);
         const url = `${this.baseUrl}/auth/userData`;
-        console.log(url);
+        // console.log(url);
         return this.http.post<any>(url, {email} )
         .pipe(map((user: Array<any>) => {
-            console.log("usuario desde el getcredentials")
+            console.log('Usuario desde el GetCredentials');
             console.log(user);
-            const User = _.pick(user, ['name', 'access_token', 'logged_in']);
+            // user.fullname = `${user.name.trim()} ${user.lastname.trim()} ${user.surname.trim()}`.trim();
+            console.log(user);
+            const User = _.pick(user, ['name', 'fullname', 'access_token', 'logged_in']);
             if (user && User.access_token && User.logged_in) {
                 this.setSession(user);
                 return user;
@@ -44,8 +52,8 @@ export class AuthService {
             }
         }))
         .catch((error: any) => {
-            console.log("ERROR OBTAINED");
-            // console.log(_.map(error));
+            console.log('ERROR OBTAINED');
+            // console.log(error);
             // return Observable.throwError(error);
             return _.map(error);
         });
@@ -54,7 +62,7 @@ export class AuthService {
     private setSession(authResult) {
         const expiresAt = moment().add(authResult.expiresIn, 'second');
         authResult.expiresAt = expiresAt;
-        console.log(authResult);
+        // console.log(authResult);
         localStorage.setItem('currentUser', JSON.stringify(authResult));
     }
 
@@ -66,8 +74,7 @@ export class AuthService {
 
     setCurrentUser() {
         const User = JSON.parse(localStorage.getItem('currentUser'));
-        this.user.name = _.trim(User.name) + ' ' + _.trim(User.lastname) + ' ' + _.trim(User.surname);
-        this.user.email = User.email;
+        this.changeUser(User);
     }
 
     getCurrentUser() {

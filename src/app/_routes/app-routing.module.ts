@@ -19,6 +19,7 @@ const routes: Routes = [
   { path: 'messages', component: MessagesComponent },
   { path: 'syslogs', component: SyslogsComponent },
   { path: 'translations', component: TranslationsComponent },
+  { path: '**', component: DashboardComponent }
 ];
 
 @NgModule({

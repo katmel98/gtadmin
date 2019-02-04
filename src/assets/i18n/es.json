@@ -29,5 +29,6 @@
     "breadcrumb_dashboard": "Consola",
     "breadcrumb_users": "Usuarios",
     "users_title": "Usuarios",
-    "users_title_descrip": "Lista de Usuarios Registrados"
+    "users_title_descrip": "Lista de Usuarios Registrados",
+    "users_form_search_box": "Buscar ..."
 }

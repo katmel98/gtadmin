@@ -37,7 +37,7 @@ export class AppComponent implements OnInit {
 
     this.activatedRoute.queryParams
       .subscribe(params => {
-        console.log(params.auth);
+        // console.log(params.auth);
         if ( params.auth ) {
           this.id = params.auth;
           const reb64 = CryptoJS.enc.Hex.parse(this.id);

@@ -25,10 +25,11 @@
     "main_menu_utils": "Utils",
     "main_menu_utils_translations": "Translations",
     "dashboard_title": "Dashboard",
-    "dashboard_title_decrip": "Welcome to Admin Console Application",
+    "dashboard_title_descrip": "Welcome to Admin Console Application",
     "breadcrumb_home": "Admin Console",
     "breadcrumb_dashboard": "Dashboard",
     "breadcrumb_users": "Users",
     "users_title": "Users",
-    "users_title_descrip": "Registered Users List"
+    "users_title_descrip": "Registered Users List",
+    "users_form_search_box": "Search ..."
 }

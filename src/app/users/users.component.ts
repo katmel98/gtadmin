@@ -7,9 +7,57 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsersComponent implements OnInit {
 
+  users = [
+    {
+      _id: '5b6da3e7e8d4ec8251ca8dbc',
+      roles: ['sales', 'marketing'],
+      created_at: 1533912039200,
+      updated_at: 1549101946156,
+      name: 'Melvin',
+      lastname: 'Sequera',
+      surname: 'Iriarte',
+      fullname: 'Melvin Sequera Iriarte',
+      email: 'katmel98@gmail.com',
+      groups: [
+        'AdminGroup'
+      ],
+      email_verified: false,
+      last_login: 1549101946151,
+      last_logout: 1538497081271,
+      logged_in: true,
+      phone: '0034671624128',
+      address: 'Calle Tulipanes 6, 4A, Fuenlabrada, Madrid'
+    },
+    {
+      _id: '5b6da3e7e8d4ec8251ca8dbd',
+      roles: ['sales', 'marketing'],
+      created_at: 1533912039200,
+      updated_at: 1549101946156,
+      name: 'Katya',
+      lastname: 'Acevedo',
+      surname: 'Rosales',
+      fullname: 'Katya Acevedo Rosales',
+      email: 'danireth2006@gmail.com',
+      groups: [
+        'AdminGroup'
+      ],
+      email_verified: false,
+      last_login: 1549101946151,
+      last_logout: 1538497081271,
+      logged_in: true,
+      phone: '0034620435825',
+      address: 'Calle Tulipanes 6, 4A, Fuenlabrada, Madrid'
+    }
+  ];
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  // List all the users in platform
+  fetchUsers() {
+
   }
 
   // Create new user

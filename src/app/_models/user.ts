@@ -3,7 +3,10 @@ export class User {
     name: string;
     lastname: string;
     surname: string;
+    fullname: string;
     email: string;
+    phone: string;
+    address: string;
     groups: string[];
     roles: string[];
 }
