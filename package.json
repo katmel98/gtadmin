@@ -25,7 +25,7 @@
     "@toverux/ngx-sweetalert2": "^4.0.0",
     "@types/crypto-js": "^3.1.47",
     "core-js": "^3.6.5",
-    "crypto-js": "^4.0.0",
+    "crypto-js": "^4.2.0",
     "ig-truncate": "github:igreulich/angular-truncate",
     "moment": "^2.27.0",
     "ng2-tooltip-directive": "^2.9.22",
